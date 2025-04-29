@@ -2,26 +2,6 @@ import { expect } from "@playwright/test";
 import { test } from "../pages/base";
 import { invalidUser, problemUser, validUser } from "../test-data/users";
 
-// import { LoginPage } from "../pages/login.page";
-
-// // Setup
-// // Open browser
-
-// let browser
-// let page;
-
-// test.beforeAll(async () => {
-//     browser = await chromium.launch();
-//     page = await browser.newPage();
-// })
-
-// test.afterAll(async () => {
-//     browser.close();
-// })
-
-
-// // Teardown
-// // Close browser
 
 test.describe("Login Page", () => {
 

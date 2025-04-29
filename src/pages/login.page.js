@@ -39,11 +39,17 @@ export class LoginPage {
     }
 
     async ErrorMessage() {
+        const errorLocator = this.page.locator(this.locatorErrorMessage);
         try {
-            return await this.page.locator(this.locatorErrorMessage).textContent({ timeout: 1000 }) || '';
-        } catch (e) { }
+            if (await errorLocator.isVisible({ timeout: 1000 })) {
+                return await errorLocator.textContent() || '';
+            }
+        } catch (e) {
+            console.warn('No error message found or timeout occurred:', e);
+        }
         return '';
     }
+
 
     isValidUrl() {
         const url = removeSlash(this.page.url());
